@@ -27,5 +27,5 @@ public class SoftSkillController {
     public List<SoftSkill> getAllSoftSkills() {
         return softSkillRepository.findAll();
     }
-    
 }
+

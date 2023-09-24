@@ -20,10 +20,10 @@ import lombok.NoArgsConstructor;
 @Table(name="users_has_soft_skills")
 public class UserHasSoftSkill {
 
-	//@Id
-	//@GeneratedValue(strategy=GenerationType.IDENTITY)
-	//private Long hasSoftSkillId;
-	private Long fkUsersId;
-	private Long fkSoftSkillsId;
+		@Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long hasSoftSkillsId;
+	    private Long userId;
+	    private Long softSkillId;
 	
 }
