@@ -17,10 +17,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name="soft_skills")
-public class SoftSkill {
+@Table(name="users_has_soft_skills")
+public class UserHasSoftSkill {
 
-	private Long id;
-	private String name;
+	//@Id
+	//@GeneratedValue(strategy=GenerationType.IDENTITY)
+	//private Long hasSoftSkillId;
+	private Long fkUsersId;
+	private Long fkSoftSkillsId;
 	
 }
