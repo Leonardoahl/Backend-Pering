@@ -23,32 +23,32 @@ public class HashtagController {
     @Autowired
     private HashtagService hashtagService;
 
-    @GetMapping
+    @GetMapping//Solicitud get para todos los hashtag
     public ResponseEntity<List<Hashtag>> getAllHashtags() {
         List<Hashtag> hashtags = hashtagService.getAllHashtags();
         return ResponseEntity.ok(hashtags);
     }
 
-    @GetMapping("/{id}")
+    @GetMapping("/{id}")//Solicitud get para hashtag por id
     public ResponseEntity<Hashtag> getHashtagById(@PathVariable long id) {
         Optional<Hashtag> hashtag = hashtagService.getHashtagById(id);
         return hashtag.map(ResponseEntity::ok)
                 .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
     }
 
-    @PostMapping
+    @PostMapping//Solicitud post para hashtag
     public ResponseEntity<Hashtag> setHashtag(@RequestBody Hashtag hashtag) {
         Hashtag newHashtag = hashtagService.setHashtag(hashtag);
         return ResponseEntity.status(HttpStatus.CREATED).body(newHashtag);
     }
 
-    @PutMapping("/{id}")
+    @PutMapping("/{id}")//Solicitud put para actualizar hashtag por id
     public ResponseEntity<Hashtag> updateHashtag(@RequestBody Hashtag hashtag, @PathVariable long id) {
         Hashtag updatedHashtag = hashtagService.updateHashtag(hashtag, id);
         return ResponseEntity.ok(updatedHashtag);
     }
 
-    @DeleteMapping("/{id}")
+    @DeleteMapping("/{id}")//Solicitud delete para elimirar hashtag por id
     public ResponseEntity<String> deleteHashtag(@PathVariable long id) {
         hashtagService.deleteHashtag(id);
         return ResponseEntity.ok("Hashtag deleted successfully");
