@@ -25,22 +25,24 @@ public class UserHasSoftSkillController {
 	  @GetMapping//Solicitud get para userHasSoftSkill (all)
 	    public ResponseEntity<List<UserHasSoftSkill>> getAllUserHasSoftSkill() {
 	    	List<UserHasSoftSkill> userHasSoftSkills = (List<UserHasSoftSkill>)userHasSoftSkillsService.getAllUserHasSoftSkill();
-	        return ResponseEntity.ok(userHasSoftSkills);
+	    	
+	    	return new ResponseEntity<List<UserHasSoftSkill>>(userHasSoftSkills, HttpStatus.OK);
+	       
 	    }
-	  
 	    
 	  
 	  @GetMapping("/{id}")//Solicitud get para userHasSoftSkill por id
 	    public ResponseEntity<UserHasSoftSkill> getSoftSkillById(@PathVariable long id) {
 	        Optional<UserHasSoftSkill> userHasSoftSkill = userHasSoftSkillsService.getUserHasSoftSkillById(id);
-	        return userHasSoftSkill.map(ResponseEntity::ok)
-	                .orElseGet(() -> ResponseEntity.status(HttpStatus.NOT_FOUND).build());
+	       
+	        return new ResponseEntity<UserHasSoftSkill>(userHasSoftSkill.get(),HttpStatus.OK);
 	    }
 	  
 	    
 	  @DeleteMapping("/{id}")//Solicitud delete para eliminar userHasSoftSkill por id
 	  public ResponseEntity<String> deleteSoftSkill(@PathVariable long id) {
 		  	userHasSoftSkillsService.deleteUserHasSoftSkills(id);
+		  	
 	        return ResponseEntity.ok("SoftSkill deleted successfully");
 	    }
 	    
