@@ -7,9 +7,9 @@ import org.perryCode.peringbackend.entity.SoftSkill;
 
 public interface SoftSkillService {
 	
-	List<SoftSkill> getAllHashtags();
+	List<SoftSkill> getAllSoftSkills();
 	
-	Optional<SoftSkill> getHashtagById(long id);
+	Optional<SoftSkill> getSoftSkillById(long id);
 	
 	SoftSkill setSoftSkill(SoftSkill softSkill);
 	

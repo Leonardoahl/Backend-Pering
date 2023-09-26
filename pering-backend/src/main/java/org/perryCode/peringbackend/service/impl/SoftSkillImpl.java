@@ -4,38 +4,53 @@ import java.util.List;
 import java.util.Optional;
 
 import org.perryCode.peringbackend.entity.SoftSkill;
+import org.perryCode.peringbackend.repository.SoftSkillRepository;
 import org.perryCode.peringbackend.service.SoftSkillService;
+import org.springframework.beans.factory.annotation.Autowired;
 
 public class SoftSkillImpl implements SoftSkillService{
+	
+	@Autowired
+	SoftSkillRepository softSkillRepository;
+	
 
 	@Override
-	public List<SoftSkill> getAllHashtags() {
-		// TODO Auto-generated method stub
-		return null;
+	public List<SoftSkill> getAllSoftSkills() {
+		return softSkillRepository.findAll() ;
 	}
+	
 
 	@Override
-	public Optional<SoftSkill> getHashtagById(long id) {
-		// TODO Auto-generated method stub
-		return Optional.empty();
+	public Optional<SoftSkill> getSoftSkillById(long id) {
+		return softSkillRepository.findById(id);
 	}
 
 	@Override
 	public SoftSkill setSoftSkill(SoftSkill softSkill) {
-		// TODO Auto-generated method stub
-		return null;
+		return softSkillRepository.save(softSkill);
 	}
 
 	@Override
 	public SoftSkill updateSoftSkill(SoftSkill softSkill, long id) {
-		// TODO Auto-generated method stub
-		return null;
+		
+		Optional<SoftSkill> existingSoftSkill = softSkillRepository.findById(id);
+		
+		if(!existingSoftSkill.isPresent()) {
+			throw new IllegalStateException("SoftSkill does not exist");
+		}
+		
+		SoftSkill updateSoftSkill = existingSoftSkill.get();
+		updateSoftSkill.setName(softSkill.getName());
+		
+		return softSkillRepository.save(updateSoftSkill);
 	}
 
 	@Override
 	public void deleteSoftSkill(long id) {
-		// TODO Auto-generated method stub
+		softSkillRepository.deleteById(id);
 		
 	}
+
+
 
 }
