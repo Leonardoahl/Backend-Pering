@@ -5,9 +5,11 @@ import java.util.Optional;
 
 import org.perryCode.peringbackend.entity.SoftSkill;
 import org.perryCode.peringbackend.repository.SoftSkillRepository;
+import org.springframework.stereotype.Service;
 import org.perryCode.peringbackend.service.SoftSkillService;
 import org.springframework.beans.factory.annotation.Autowired;
 
+@Service
 public class SoftSkillImpl implements SoftSkillService{
 	
 	@Autowired

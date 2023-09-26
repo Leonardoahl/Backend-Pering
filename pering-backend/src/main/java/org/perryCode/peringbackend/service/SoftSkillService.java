@@ -5,6 +5,7 @@ import java.util.Optional;
 
 import org.perryCode.peringbackend.entity.SoftSkill;
 
+
 public interface SoftSkillService {
 	
 	List<SoftSkill> getAllSoftSkills();
