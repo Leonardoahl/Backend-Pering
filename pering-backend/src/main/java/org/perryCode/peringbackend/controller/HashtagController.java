@@ -28,7 +28,7 @@ public class HashtagController {
 
     @GetMapping//Solicitud get para todos los hashtag
     public ResponseEntity<List<Hashtag>> getAllHashtags() {
-        List<Hashtag> hashtags = hashtagService.getAllHashtags();
+        List<Hashtag> hashtags = (List<Hashtag>) hashtagService.getAllHashtags();
         return ResponseEntity.ok(hashtags);
     }
 
