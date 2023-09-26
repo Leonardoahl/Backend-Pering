@@ -1,6 +1,8 @@
 package org.perryCode.peringbackend.controller;
 
 
+import java.util.List;
+
 import org.perryCode.peringbackend.entity.User;
 import org.perryCode.peringbackend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,12 +17,20 @@ public class UserController {
 	
 	@Autowired
 	UserRepository userRepository;
+	
+	@GetMapping("")
+	public List<User> getUserList() {
+		List<User> customer = (List<User>) userRepository.findAll();
+		System.out.println(customer);
+		return customer;	
+	}
 
 	@GetMapping("{id}")
 	public User getUserById(@PathVariable long id) {
 		User customer = userRepository.findById(id);
-		
+		System.out.println(customer);
 		return customer;	
-		}
+	}
+	
 	
 }
