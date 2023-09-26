@@ -35,8 +35,7 @@ public class User {
 	private Date birthday;
 	private Date registerDate;
 	
-	
-	
+		
 	
 	
 	
