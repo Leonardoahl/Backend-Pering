@@ -35,7 +35,7 @@ public class UserHasSoftSkill {
 
 	  	@ManyToOne
 	    @JoinColumn(name = "fk_soft_skills_id", nullable = false)
-	  	@JsonIgnore
+	  	//@JsonIgnore
 	    private SoftSkill softSkillsId;
 
 	
