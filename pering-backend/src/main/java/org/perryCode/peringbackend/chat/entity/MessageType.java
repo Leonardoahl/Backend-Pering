@@ -1,4 +1,4 @@
-package org.perryCode.peringbackend.chat;
+package org.perryCode.peringbackend.chat.entity;
 
 public enum MessageType {
 	CHAT,

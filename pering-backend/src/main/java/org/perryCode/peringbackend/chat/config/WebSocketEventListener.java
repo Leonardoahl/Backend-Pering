@@ -1,7 +1,7 @@
 package org.perryCode.peringbackend.chat.config;
 
-import org.perryCode.peringbackend.chat.ChatMessage;
-import org.perryCode.peringbackend.chat.MessageType;
+import org.perryCode.peringbackend.chat.entity.ChatMessage;
+import org.perryCode.peringbackend.chat.entity.MessageType;
 import org.springframework.context.event.EventListener;
 import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.messaging.simp.stomp.StompHeaderAccessor;

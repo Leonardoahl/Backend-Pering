@@ -1,4 +1,4 @@
-package org.perryCode.peringbackend.chat;
+package org.perryCode.peringbackend.chat.entity;
 
 
 import lombok.AllArgsConstructor;
@@ -13,7 +13,6 @@ import lombok.Setter;
 @NoArgsConstructor
 @Builder
 public class ChatMessage {
-	
 	private String content;
 	private String sender;
 	private String receiver;
