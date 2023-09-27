@@ -13,4 +13,5 @@ public interface UserHasSoftSkillService {
 	 
 	 void deleteUserHasSoftSkills(Long id);
 	
+	 
 }
