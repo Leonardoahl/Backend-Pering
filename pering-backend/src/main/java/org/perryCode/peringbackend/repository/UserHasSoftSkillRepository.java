@@ -5,7 +5,6 @@ import java.util.List;
 import org.perryCode.peringbackend.entity.UserHasSoftSkill;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.data.repository.query.Param;
 
 public interface UserHasSoftSkillRepository extends CrudRepository<UserHasSoftSkill, Long> {
     
@@ -13,7 +12,5 @@ public interface UserHasSoftSkillRepository extends CrudRepository<UserHasSoftSk
 	
 	@Query("SELECT uhs FROM UserHasSoftSkill uhs")
     List<UserHasSoftSkill> getFilteredUserHasSoftSkills();
-	
-
 	
 }
