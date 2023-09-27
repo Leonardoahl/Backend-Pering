@@ -15,10 +15,11 @@ public class UserHasSoftSkillImpl implements UserHasSoftSkillService{
 	@Autowired
 	UserHasSoftSkillRepository userHasSoftSkillRepository;
 	
+	
 
 	@Override
 	public List<UserHasSoftSkill> getAllUserHasSoftSkill() {
-		return userHasSoftSkillRepository.findAll() ;
+	return (List<UserHasSoftSkill>) userHasSoftSkillRepository.findAll() ;
 	}
 	
 

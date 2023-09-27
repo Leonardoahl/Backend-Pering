@@ -32,13 +32,7 @@ public class UserHasSoftSkill {
 	    @Column(name = "fk_soft_skills_id")
 	    private Long softSkillsId;
 
-	    @ManyToOne
-	    @JoinColumn(name = "soft_skill_id")
-	    private SoftSkill softSkill;
-
-	    @ManyToOne
-	    @JoinColumn(name = "user_id")
-	    private User user;
+	
 	
 }
 
