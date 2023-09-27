@@ -111,13 +111,13 @@ INSERT INTO hashtag (name) VALUES
 
 -- Insert Usuarios
 
-INSERT INTO `pering`.`users` (`username`, `firstname`, `lastname`, `email`, `password`, `birthdate`, `profilepic`, `description`, `register_date`)
+INSERT INTO `pering`.`users` (`username`, `firstname`, `lastname`, `email`, `password`, `profilepic`, `description`, `register_date`)
 VALUES
-  ('Usuario1', 'Juan', 'Pérez', 'juan@example.com', 'contraseña1', '1990-01-01', 'https://ae01.alicdn.com/kf/H59d4be5f2fa14c07ae747c79dd8a8fa0B/Perry-The-Platypus-Beautiful-Icons-Pins-Badge-Decoration-Brooches-Metal-Badges-For-Clothes-Backpack-Decoration-58mm.jpg', 'Descripción de Usuario1', '2023-09-18'),
-  ('Usuario2', 'María', 'González', 'maria@example.com', 'contraseña2', '1995-02-15', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP2O7jVvsiu6VAzLenct84ihy4L0xdHn4Omg&usqp=CAU', 'Descripción de Usuario2', '2023-09-18'),
-  ('Usuario3', 'Carlos', 'López', 'carlos@example.com', 'contraseña3', '1988-05-20', 'https://w7.pngwing.com/pngs/897/929/png-transparent-phineas-flynn-perry-the-platypus-ferb-fletcher-candace-flynn-dr-heinz-doofenshmirtz-others-hat-cartoon-unlimited.png', 'Descripción de Usuario3', '2023-09-18'),
-  ('Usuario4', 'Ana', 'Martínez', 'ana@example.com', 'contraseña4', '1992-11-10', 'https://ae01.alicdn.com/kf/H59d4be5f2fa14c07ae747c79dd8a8fa0B/Perry-The-Platypus-Beautiful-Icons-Pins-Badge-Decoration-Brooches-Metal-Badges-For-Clothes-Backpack-Decoration-58mm.jpg', 'Descripción de Usuario4', '2023-09-18'),
-  ('Usuario5', 'Luis', 'Rodríguez', 'luis@example.com', 'contraseña5', '1998-09-05', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP2O7jVvsiu6VAzLenct84ihy4L0xdHn4Omg&usqp=CAU', 'Descripción de Usuario5', '2023-09-18');
+  ('Usuario1', 'Juan', 'Pérez', 'juan@example.com', 'contraseña1', 'https://ae01.alicdn.com/kf/H59d4be5f2fa14c07ae747c79dd8a8fa0B/Perry-The-Platypus-Beautiful-Icons-Pins-Badge-Decoration-Brooches-Metal-Badges-For-Clothes-Backpack-Decoration-58mm.jpg', 'Descripción de Usuario1', '2023-09-18'),
+  ('Usuario2', 'María', 'González', 'maria@example.com', 'contraseña2', 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP2O7jVvsiu6VAzLenct84ihy4L0xdHn4Omg&usqp=CAU', 'Descripción de Usuario2', '2023-09-18'),
+  ('Usuario3', 'Carlos', 'López', 'carlos@example.com', 'contraseña3', 'https://w7.pngwing.com/pngs/897/929/png-transparent-phineas-flynn-perry-the-platypus-ferb-fletcher-candace-flynn-dr-heinz-doofenshmirtz-others-hat-cartoon-unlimited.png', 'Descripción de Usuario3', '2023-09-18'),
+  ('Usuario4', 'Ana', 'Martínez', 'ana@example.com', 'contraseña4',  'https://ae01.alicdn.com/kf/H59d4be5f2fa14c07ae747c79dd8a8fa0B/Perry-The-Platypus-Beautiful-Icons-Pins-Badge-Decoration-Brooches-Metal-Badges-For-Clothes-Backpack-Decoration-58mm.jpg', 'Descripción de Usuario4', '2023-09-18'),
+  ('Usuario5', 'Luis', 'Rodríguez', 'luis@example.com', 'contraseña5',  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQP2O7jVvsiu6VAzLenct84ihy4L0xdHn4Omg&usqp=CAU', 'Descripción de Usuario5', '2023-09-18');
 
 
 
