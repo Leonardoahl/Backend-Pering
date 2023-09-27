@@ -22,8 +22,9 @@ public class Post {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
 	private Date publication_date;
-	private int likes;
+	private String title;
 	private String content;
+	private int likes;
 	private Long fk_users_id;
 	private Long fk_hashtag_id;
 }
