@@ -29,17 +29,15 @@ public class PostController {
 	
 	
 	
-	@GetMapping("/hashtag/{fk_hashtag_id}") 
-	public ResponseEntity<List<Post>>getPostsByHashtag(@PathVariable Iterable<Long> fk_hashtag_id) { 
-		List<Post> posts = postService.getPostsByHashtag(fk_hashtag_id);
-	  
-		if (!posts.isEmpty()) { 
-			return new ResponseEntity<List<Post>>(posts, HttpStatus.OK); 
-		}
-		else { 
-			return ResponseEntity.notFound().build(); 
-		} 
-	  }
+	@GetMapping("/hashtag/{fk_hashtag_id}")
+	public ResponseEntity<List<Post>> getPostsByHashtagId(@PathVariable Long fk_hashtag_id) {
+	    List<Post> posts = postService.getPostsByHashtagId(fk_hashtag_id);
+	    if (!posts.isEmpty()) {
+	        return new ResponseEntity<List<Post>>(posts, HttpStatus.OK);
+	    } else {
+	        return ResponseEntity.notFound().build();
+	    }
+	}
 	  
 	@PostMapping
 	public ResponseEntity<Post> createPost(@RequestBody Post post){

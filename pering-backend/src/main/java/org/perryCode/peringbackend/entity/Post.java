@@ -2,6 +2,7 @@ package org.perryCode.peringbackend.entity;
 
 import java.util.Date;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,10 +22,13 @@ public class Post {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private Date publication_date;
+	@Column(name = "publication_date")
+	private Date publicationdate;
 	private String title;
 	private String content;
 	private int likes;
-	private Long fk_users_id;
-	private Long fk_hashtag_id;
+	@Column(name = "fk_users_id")
+	private Long fkusersid;
+	@Column(name = "fk_hashtag_id")
+	private Long fkhashtagid;
 }

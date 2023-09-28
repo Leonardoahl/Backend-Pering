@@ -1,6 +1,8 @@
 package org.perryCode.peringbackend.service.impl;
 
+import java.util.Date;
 import java.util.List;
+import java.util.NoSuchElementException;
 
 import org.perryCode.peringbackend.entity.Post;
 import org.perryCode.peringbackend.repository.PostRepository;
@@ -26,8 +28,8 @@ public class PostServiceImpl implements PostService{
 	}
 
 	@Override
-	public List<Post> getPostsByHashtag(Iterable<Long> hashtagId) {
-		return (List<Post>) postRepository.findAllById(hashtagId);
+	public List<Post> getPostsByHashtagId(Long fk_hashtag_id) {
+	    return postRepository.findAllByFkhashtagid(fk_hashtag_id);
 	}
 
 	@Override
@@ -44,8 +46,13 @@ public class PostServiceImpl implements PostService{
 
 	@Override
 	public String deletePost(Long id) {
-		postRepository.deleteById(id);
-		return "Post Eliminado Correctamente";
+	    if (postRepository.findById(id).isPresent()) {
+	        postRepository.deleteById(id);
+	        return "Post Eliminado Correctamente";
+	    } else {
+	        throw new NoSuchElementException("Post not found");
+	    }
+		
 	}
 
 	@Override
@@ -56,6 +63,11 @@ public class PostServiceImpl implements PostService{
 		}
 		
 		return postRepository.save(existingPost);
+	}
+
+	@Override
+	public List<Post> getPostsByPublicationDate(Date publicationDate) {
+		return postRepository.findAllByPublicationdate(publicationDate);
 	}
 
 }
