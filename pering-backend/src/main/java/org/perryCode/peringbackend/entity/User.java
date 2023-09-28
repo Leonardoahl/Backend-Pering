@@ -35,6 +35,6 @@ public class User{
 	private String description;
 	private Date birthday;
 	private Date registerDate;
-		
+
 	
 }
