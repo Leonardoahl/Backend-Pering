@@ -35,6 +35,11 @@ public class UserHasSoftSkillImpl implements UserHasSoftSkillService{
 		
 	}
 
+	@Override
+    public List<UserHasSoftSkill> getUserSoftSkillsByUserId(Long userId) {
+        return userHasSoftSkillRepository.findByUserIdId(userId);
+    }
+
 
 
 }
