@@ -1,5 +1,7 @@
 HELP.md
 .gradle
+build
+!**/libs/
 !**/src/test/**/build/
 
 ### STS ###
