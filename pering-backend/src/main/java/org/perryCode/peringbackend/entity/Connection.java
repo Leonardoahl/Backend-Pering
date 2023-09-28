@@ -1,5 +1,6 @@
 package org.perryCode.peringbackend.entity;
 
+/*
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -23,4 +24,4 @@ public class Connection {
 	private String sender;
 	private String receiver;
 	
-}
+}*/
