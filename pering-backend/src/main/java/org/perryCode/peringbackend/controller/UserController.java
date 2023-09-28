@@ -24,6 +24,7 @@ public class UserController {
 	@Autowired
 	UserService userService;
 
+	@CrossOrigin(origins = "*")
 	@GetMapping("{id}")
 	public ResponseEntity<User> getUserById(@PathVariable long id) {
 		User customer = userService.getUserById(id);
@@ -31,6 +32,7 @@ public class UserController {
 		return new ResponseEntity<User>(customer, HttpStatus.OK);	
 	}
 	
+	@CrossOrigin(origins = "*")
 	@GetMapping()
 	public ResponseEntity<List<User>> getAllUsers(){
 		List<User> users = userService.getAllUsers();
