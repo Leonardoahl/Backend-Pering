@@ -15,12 +15,14 @@ public class PostController {
 	@Autowired
 	PostService postService;
 	
+	@CrossOrigin(origins = "*")
 	@GetMapping("{id}")
 	public ResponseEntity<Post> getPostById(@PathVariable Long id) {
 		Post post = postService.getPostById(id);
 		return new ResponseEntity<Post>(post, HttpStatus.OK);
 	}
 	
+	@CrossOrigin(origins = "*")
 	@GetMapping
 	public ResponseEntity<List<Post>> getAllPosts(){
 		List<Post> posts = (List<Post>) postService.getAllPosts();
@@ -28,7 +30,7 @@ public class PostController {
 	}
 	
 	
-	
+	@CrossOrigin(origins = "*")
 	@GetMapping("/hashtag/{fk_hashtag_id}")
 	public ResponseEntity<List<Post>> getPostsByHashtagId(@PathVariable Long fk_hashtag_id) {
 	    List<Post> posts = postService.getPostsByHashtagId(fk_hashtag_id);
@@ -38,14 +40,15 @@ public class PostController {
 	        return ResponseEntity.notFound().build();
 	    }
 	}
-	  
+	 
+	@CrossOrigin(origins = "*")
 	@PostMapping
 	public ResponseEntity<Post> createPost(@RequestBody Post post){
 		Post newPost = postService.createPost(post);
 		return new ResponseEntity<Post>(newPost, HttpStatus.CREATED);
 	} 
 
-	
+	@CrossOrigin(origins = "*")
 	@PostMapping("/{id}/like") 
 	public ResponseEntity<Post> addLike(@PathVariable Long id) {
 		Post existingPost = postService.getPostById( id );	
@@ -53,6 +56,7 @@ public class PostController {
 		return new ResponseEntity<Post>(existingPost, HttpStatus.OK); 
 	}
 	
+	@CrossOrigin(origins = "*")
 	@PostMapping("/{id}/dislike") 
 	public ResponseEntity<Post> removeLike(@PathVariable Long id) {
 		Post existingPost = postService.getPostById( id );	
@@ -60,7 +64,7 @@ public class PostController {
 		return new ResponseEntity<Post>(existingPost, HttpStatus.OK); 
 	 }
 	 
-	  
+	@CrossOrigin(origins = "*")
 	@DeleteMapping("/{id}")
     public ResponseEntity<String> deletePost(@PathVariable Long id) {
         postService.deletePost(id);
