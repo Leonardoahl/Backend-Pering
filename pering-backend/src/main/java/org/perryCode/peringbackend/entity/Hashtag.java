@@ -1,11 +1,6 @@
 package org.perryCode.peringbackend.entity;
 
-
-
-
-import java.security.Principal;
-import java.util.Date;
-
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -20,21 +15,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name="users")
-public class User{
+@Table(name="hashtag")
+public class Hashtag {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="id")
 	private Long id;
-	private String username;
-	private String firstname;
-	private String lastname;
-	private String email;
-	private String password;
-	private String profilepic;
-	private String description;
-	private Date birthday;
-	private Date registerDate;
-		
+	@Column(name = "name", length = 50, unique = true)
+	private String name;
+
+	
 	
 }

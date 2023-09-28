@@ -1,9 +1,5 @@
 package org.perryCode.peringbackend.entity;
 
-
-
-
-import java.security.Principal;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
@@ -15,26 +11,19 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-
 @AllArgsConstructor
 @NoArgsConstructor
 @Data
 @Entity
-@Table(name="users")
-public class User{
-
+@Table(name="posts")
+public class Post {
+	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private String username;
-	private String firstname;
-	private String lastname;
-	private String email;
-	private String password;
-	private String profilepic;
-	private String description;
-	private Date birthday;
-	private Date registerDate;
-		
-	
+	private Date publication_date;
+	private int likes;
+	private String content;
+	private Long fk_users_id;
+	private Long fk_hashtag_id;
 }
