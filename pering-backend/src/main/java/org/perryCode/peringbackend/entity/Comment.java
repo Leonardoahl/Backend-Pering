@@ -23,15 +23,14 @@ public class Comment {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private Long id;
-	private Long userId;
 	private String content;
 	private int likes;
 	private Date commentDate;
-	private Long postId;
 	
-	/*@ManyToOne
+	
+	@ManyToOne
 	@JoinColumn(name = "fk_posts_id" )
-	private Post post;*/
+	private Post post;
 	
 	@ManyToOne
 	@JoinColumn(name = "fk_users_id" )
