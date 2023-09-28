@@ -36,4 +36,5 @@ public class Comment {
 	@JoinColumn(name = "fk_users_id" )
 	private User user;
 	
+	
 }
