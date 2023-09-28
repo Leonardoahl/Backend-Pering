@@ -34,6 +34,7 @@ public class Comment {
 	private Post post;*/
 	
 	@ManyToOne
-	@JoinColumn(name = "fk_user_id" )
-	private User usere;
+	@JoinColumn(name = "fk_users_id" )
+	private User user;
+	
 }

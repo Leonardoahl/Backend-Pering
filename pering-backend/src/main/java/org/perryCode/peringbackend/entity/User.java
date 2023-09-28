@@ -3,6 +3,7 @@ package org.perryCode.peringbackend.entity;
 
 
 
+import java.security.Principal;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
@@ -20,7 +21,7 @@ import lombok.NoArgsConstructor;
 @Data
 @Entity
 @Table(name="users")
-public class User {
+public class User{
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -34,8 +35,6 @@ public class User {
 	private String description;
 	private Date birthday;
 	private Date registerDate;
-	
-	
-	
+
 	
 }
