@@ -29,7 +29,7 @@ public class PostController {
 		return new ResponseEntity<List<Post>>(posts, HttpStatus.OK);
 	}
 	
-	
+	/*
 	@CrossOrigin(origins = "*")
 	@GetMapping("/hashtag/{fk_hashtag_id}")
 	public ResponseEntity<List<Post>> getPostsByHashtagId(@PathVariable Long fk_hashtag_id) {
@@ -40,7 +40,7 @@ public class PostController {
 	        return ResponseEntity.notFound().build();
 	    }
 	}
-	 
+	 */
 	@CrossOrigin(origins = "*")
 	@PostMapping
 	public ResponseEntity<Post> createPost(@RequestBody Post post){

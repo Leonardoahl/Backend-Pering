@@ -1,7 +1,6 @@
 package org.perryCode.peringbackend.entity;
 
 import java.sql.Timestamp;
-import java.util.Date;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -35,6 +34,7 @@ public class Post {
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_users_id", referencedColumnName = "id")
 	private User user;
-	@Column(name = "fk_hashtag_id")
-	private Long fkhashtagid;
+	@ManyToOne(fetch = FetchType.EAGER)
+	@JoinColumn(name = "fk_hashtag_id", referencedColumnName = "id")
+	private Hashtag hashtag;
 }
