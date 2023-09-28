@@ -1,6 +1,5 @@
 package org.perryCode.peringbackend.service.impl;
 
-import java.sql.Timestamp;
 import java.util.List;
 import java.util.NoSuchElementException;
 
@@ -26,12 +25,12 @@ public class PostServiceImpl implements PostService{
 		return postRepository.findById(id)
 				.orElseThrow( ()-> new IllegalStateException("Post does not exist with id "+ id) );
 	}
-	/*
+	
 	@Override
 	public List<Post> getPostsByHashtagId(Long fk_hashtag_id) {
-	    return postRepository.findAllByFkhashtagid(fk_hashtag_id);
+	    return postRepository.findAllByHashtagId(fk_hashtag_id);
 	}
-	*/
+	
 	@Override
 	public Post createPost(Post post) {
 		return postRepository.save(post);
@@ -63,11 +62,6 @@ public class PostServiceImpl implements PostService{
 		}
 		
 		return postRepository.save(existingPost);
-	}
-
-	@Override
-	public List<Post> getPostsByPublicationDate(Timestamp publicationDate) {
-		return postRepository.findAllByPublicationdate(publicationDate);
 	}
 
 }

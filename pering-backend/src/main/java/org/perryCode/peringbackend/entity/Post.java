@@ -31,7 +31,7 @@ public class Post {
 	private String title;
 	private String content;
 	private int likes;
-	@ManyToOne(fetch = FetchType.EAGER)
+	@ManyToOne(fetch = FetchType.EAGER) // FetchType.EAGER 
 	@JoinColumn(name = "fk_users_id", referencedColumnName = "id")
 	private User user;
 	@ManyToOne(fetch = FetchType.EAGER)
