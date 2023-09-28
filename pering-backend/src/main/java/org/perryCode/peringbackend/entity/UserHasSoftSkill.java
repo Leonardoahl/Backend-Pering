@@ -23,7 +23,7 @@ import lombok.NoArgsConstructor;
 @Table(name="users_has_soft_skills")
 public class UserHasSoftSkill {
 
-	  @Id
+	  	@Id
 	    @GeneratedValue(strategy = GenerationType.IDENTITY)
 	    @Column(name = "has_soft_skills_id")
 	    private Long hasSoftSkillsId;
