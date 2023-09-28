@@ -26,6 +26,6 @@ public class TechSkillController {
     
     @GetMapping
     public List<TechSkill> getAllSoftSkills() {
-        return techSkillRepository.findAll();
+        return (List<TechSkill>) techSkillRepository.findAll();
     }
 }
