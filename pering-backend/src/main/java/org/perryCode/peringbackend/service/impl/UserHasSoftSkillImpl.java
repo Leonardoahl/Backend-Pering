@@ -15,10 +15,11 @@ public class UserHasSoftSkillImpl implements UserHasSoftSkillService{
 	@Autowired
 	UserHasSoftSkillRepository userHasSoftSkillRepository;
 	
+	
 
 	@Override
 	public List<UserHasSoftSkill> getAllUserHasSoftSkill() {
-		return userHasSoftSkillRepository.findAll() ;
+	return (List<UserHasSoftSkill>) userHasSoftSkillRepository.findAll() ;
 	}
 	
 
@@ -33,6 +34,11 @@ public class UserHasSoftSkillImpl implements UserHasSoftSkillService{
 		userHasSoftSkillRepository.deleteById(id);
 		
 	}
+
+	@Override
+    public List<UserHasSoftSkill> getUserSoftSkillsByUserId(Long userId) {
+        return userHasSoftSkillRepository.findByUserIdId(userId);
+    }
 
 
 

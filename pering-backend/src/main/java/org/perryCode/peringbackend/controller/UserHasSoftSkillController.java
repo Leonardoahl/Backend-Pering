@@ -1,7 +1,6 @@
 package org.perryCode.peringbackend.controller;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.perryCode.peringbackend.entity.UserHasSoftSkill;
 import org.perryCode.peringbackend.service.UserHasSoftSkillService;
@@ -31,12 +30,12 @@ public class UserHasSoftSkillController {
 	    }
 	    
 	  
-	  @GetMapping("/{id}")//Solicitud get para userHasSoftSkill por id
-	    public ResponseEntity<UserHasSoftSkill> getSoftSkillById(@PathVariable long id) {
-	        Optional<UserHasSoftSkill> userHasSoftSkill = userHasSoftSkillsService.getUserHasSoftSkillById(id);
-	       
-	        return new ResponseEntity<UserHasSoftSkill>(userHasSoftSkill.get(),HttpStatus.OK);
-	    }
+	  //@GetMapping("/{id}")//Solicitud get para userHasSoftSkill por id
+	  //  public ResponseEntity<UserHasSoftSkill> getSoftSkillById(@PathVariable long id) {
+	 //       Optional<UserHasSoftSkill> userHasSoftSkill = userHasSoftSkillsService.getUserHasSoftSkillById(id);
+	  //     
+	 //       return new ResponseEntity<UserHasSoftSkill>(userHasSoftSkill.get(),HttpStatus.OK);
+	  //  }
 	  
 	    
 	  @DeleteMapping("/{id}")//Solicitud delete para eliminar userHasSoftSkill por id
@@ -46,7 +45,12 @@ public class UserHasSoftSkillController {
 	        return ResponseEntity.ok("SoftSkill deleted successfully");
 	    }
 	    
-	 
+	  @GetMapping("/{userId}") // {userId} para recibir el ID del usuario
+	    public ResponseEntity<List<UserHasSoftSkill>> getSoftSkillsByUserId(@PathVariable Long userId) {
+	        List<UserHasSoftSkill> userHasSoftSkills = userHasSoftSkillsService.getUserSoftSkillsByUserId(userId);
+
+	        return new ResponseEntity<>(userHasSoftSkills, HttpStatus.OK);
+	    }
     
   
 }

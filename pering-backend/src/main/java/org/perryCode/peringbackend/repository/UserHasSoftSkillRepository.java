@@ -7,5 +7,11 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface UserHasSoftSkillRepository extends CrudRepository<UserHasSoftSkill, Long> {
     
-	List<UserHasSoftSkill> findAll();
+	//List<UserHasSoftSkill> findAll();
+	
+	
+    List<UserHasSoftSkill> findByUserIdId(Long userId);;
+	
+	
+	
 }

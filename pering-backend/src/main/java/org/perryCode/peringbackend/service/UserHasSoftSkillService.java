@@ -13,4 +13,6 @@ public interface UserHasSoftSkillService {
 	 
 	 void deleteUserHasSoftSkills(Long id);
 	
+	 List<UserHasSoftSkill> getUserSoftSkillsByUserId(Long userId);
+	 
 }

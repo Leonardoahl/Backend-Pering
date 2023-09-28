@@ -42,5 +42,23 @@ public class UserController {
 	}
 	
 	
+	@PostMapping("/register")
+	public ResponseEntity<User> registerUser(@RequestBody User user) {
+	    User newUser = userService.createUser(user);
+	    return new ResponseEntity<>(newUser, HttpStatus.CREATED);
+	}
+	
+	@PostMapping("/login")
+	public ResponseEntity<String> loginUser(@RequestBody User loginUser) {
+	    User user = userService.getUserByUsername(loginUser.getUsername());
+
+	    if (user != null && user.getPassword().equals(loginUser.getPassword())) {
+	        return ResponseEntity.ok("Login successful");
+	    }
+
+	    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+	}
+
+	
 	
 }
