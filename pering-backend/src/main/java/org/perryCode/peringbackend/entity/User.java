@@ -4,12 +4,17 @@ package org.perryCode.peringbackend.entity;
 
 
 import java.security.Principal;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -34,6 +39,9 @@ public class User{
 	private String profilepic;
 	private String description;
 	private Date registerDate;
-
+	
+	@OneToMany(mappedBy = "user")
+	@JsonIgnoreProperties("user")
+	private List<Post> posts = new ArrayList<>();
 	
 }
