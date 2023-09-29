@@ -35,6 +35,12 @@ public class CommentController {
 	}
 	
 	@CrossOrigin(origins = "*")
+	@GetMapping("/commentsPost/{id}")
+	List<Comment> getCommentsByPostId(@PathVariable long id) {
+		return commentService.getAllCommentsByPostId(id);
+	}
+	
+	@CrossOrigin(origins = "*")
 	@PostMapping("")
 	Comment createComment (@RequestBody Comment comment) {
 		return commentService.save(comment);

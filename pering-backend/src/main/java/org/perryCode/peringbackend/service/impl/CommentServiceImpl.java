@@ -1,5 +1,6 @@
 package org.perryCode.peringbackend.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.perryCode.peringbackend.entity.Comment;
@@ -45,6 +46,21 @@ public class CommentServiceImpl implements CommentService {
 			existingComment.setLikes(post.getLikes() - 1);			
 		}
 		return commentRepository.save(existingComment);
+	}
+
+	@Override
+	public List<Comment> getAllCommentsByPostId(Long id) {
+		List<Comment> commentsPost = new ArrayList<>();
+		commentsPost = (List<Comment>) commentRepository.findAll();
+		List<Comment> commentsByPostId = new ArrayList<>();
+		
+		for(int i = 0 ; i < commentsPost.size(); i++) {
+			if(commentsPost.get(i).getPost().getPostId() == id) {
+				commentsByPostId.add(commentsPost.get(i));
+				System.out.println("Hola");
+			}
+		}
+		return commentsByPostId;
 	} 
 	
 	

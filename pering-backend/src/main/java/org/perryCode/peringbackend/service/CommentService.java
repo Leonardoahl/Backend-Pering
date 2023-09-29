@@ -9,6 +9,7 @@ public interface CommentService {
 	Comment save(Comment comment);
 	Comment getCommentById(long id);
 	List <Comment> getAll();
+	List <Comment> getAllCommentsByPostId(Long id);
 	Comment addLikeToComment(Comment post, Long id);
 	Comment removeLikeToComment(Comment post, Long id);
 }
