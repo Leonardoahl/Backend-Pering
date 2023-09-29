@@ -19,21 +19,21 @@ public class TechSkillImpl implements TechSkillService{
 	@Override
 	public List<TechSkill> getAllTechSkills() {
 		
-		return (List<TechSkill>) techSkillRepository.findAll();
+		return techSkillRepository.findAll();
 	}
 
 	@Override
-	public Optional<TechSkill> getTechSkillById(Long id) {
+	public Optional<TechSkill> getTechSkillById(long id) {
 		return techSkillRepository.findById(id);
 	}
 
 	@Override
 	public TechSkill setTechSkill(TechSkill techSkill) {
-		return techSkillRepository.save(null);
+		return techSkillRepository.save(techSkill);
 	}
 
 	@Override
-	public TechSkill updateTechSkill(TechSkill TechSkill, Long id) {
+	public TechSkill updateTechSkill(TechSkill TechSkill, long id) {
 		Optional<TechSkill> existingTechSkill = techSkillRepository.findById(id);
 			if(!existingTechSkill.isPresent()) {
 				throw new IllegalStateException("TechSkill does not exist");
