@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -27,9 +27,8 @@ public class UserController {
 	@CrossOrigin(origins = "*")
 	@GetMapping("{id}")
 	public ResponseEntity<User> getUserById(@PathVariable long id) {
-		User customer = userService.getUserById(id);
-		
-		return new ResponseEntity<User>(customer, HttpStatus.OK);	
+		User user = userService.getUserById(id);
+		return new ResponseEntity<User>(user, HttpStatus.OK);		
 	}
 	
 	@CrossOrigin(origins = "*")
@@ -49,16 +48,22 @@ public class UserController {
 	
 	@CrossOrigin(origins = "*")
 	@PostMapping("/login")
-	public ResponseEntity<String> loginUser(@RequestBody User loginUser) {
-	    User user = userService.getUserByUsername(loginUser.getUsername());
-
-	    if (user != null && user.getPassword().equals(loginUser.getPassword())) {
-	        return ResponseEntity.ok("Login successful");
-	    }
-
-	    return ResponseEntity.status(HttpStatus.UNAUTHORIZED).body("Invalid credentials");
+	public ResponseEntity<User> loginUser(@RequestBody User loginUser) {
+		User tempUser = userService.getUserByUsername(loginUser.getUsername());
+		if(tempUser.getPassword().equals(loginUser.getPassword())) {
+			System.out.println(tempUser.getPassword() + " == " + loginUser.getPassword());
+			return new ResponseEntity<User>(tempUser, HttpStatus.OK);
+		}
+	    return new ResponseEntity<User>(tempUser, HttpStatus.NOT_FOUND);
 	}
-
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
