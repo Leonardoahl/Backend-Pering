@@ -1,9 +1,14 @@
 package org.perryCode.peringbackend.controller;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.perryCode.peringbackend.entity.SoftSkill;
+import org.perryCode.peringbackend.entity.TechSkill;
 import org.perryCode.peringbackend.entity.User;
+import org.perryCode.peringbackend.service.SoftSkillService;
+import org.perryCode.peringbackend.service.TechSkillService;
 import org.perryCode.peringbackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -23,6 +28,13 @@ public class UserController {
 	
 	@Autowired
 	UserService userService;
+	
+	@Autowired
+	SoftSkillService softSkillService;
+	
+	@Autowired
+	TechSkillService techSkillService;
+	
 
 	@CrossOrigin(origins = "*")
 	@GetMapping("{id}")
@@ -61,7 +73,14 @@ public class UserController {
 	@PostMapping("/update/{id}")
 	public ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable long id) {
 		System.out.println(user.getUsername());
-		userService.updateUser(user, id);
+		
+		List<TechSkill> allTechSkills = new ArrayList<>();
+		List<SoftSkill> allSoftSkills = new ArrayList<>();
+		
+		allTechSkills = techSkillService.getAllTechSkills();
+		allSoftSkills = softSkillService.getAllSoftSkills();
+		
+		userService.updateUser(user, id, allTechSkills, allSoftSkills);
 		User updatedUser = userService.getUserById(id);
 		return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
 	}
