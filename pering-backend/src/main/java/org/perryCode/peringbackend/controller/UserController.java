@@ -59,7 +59,7 @@ public class UserController {
 	
 	@CrossOrigin(origins = "*")
 	@PostMapping("/update/{id}")
-	public ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable Long id) {
+	public ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable long id) {
 		System.out.println(user.getUsername());
 		userService.updateUser(user, id);
 		User updatedUser = userService.getUserById(id);

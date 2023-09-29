@@ -9,11 +9,11 @@ public interface TechSkillService {
 	
 	List <TechSkill> getAllTechSkills();
 	
-    Optional<TechSkill> getTechSkillById(Long id);
+    Optional<TechSkill> getTechSkillById(long id);
 	
 	TechSkill setTechSkill(TechSkill techSkill);
 	
-	TechSkill updateTechSkill(TechSkill TechSkill, Long id);
+	TechSkill updateTechSkill(TechSkill TechSkill, long id);
 	
 	void deleteTechSkill(long id);
 	
