@@ -1,6 +1,6 @@
 package org.perryCode.peringbackend.entity;
 
-
+/*
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import jakarta.persistence.Column;
@@ -41,4 +41,4 @@ public class UserHasSoftSkill {
 	
 }
 
-
+*/

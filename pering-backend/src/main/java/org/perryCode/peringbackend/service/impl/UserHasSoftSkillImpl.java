@@ -1,5 +1,5 @@
 package org.perryCode.peringbackend.service.impl;
-
+/*
 import java.util.List;
 import java.util.Optional;
 
@@ -43,3 +43,4 @@ public class UserHasSoftSkillImpl implements UserHasSoftSkillService{
 
 
 }
+*/

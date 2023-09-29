@@ -1,5 +1,5 @@
 package org.perryCode.peringbackend.service;
-
+/*
 import java.util.List;
 import java.util.Optional;
 
@@ -16,3 +16,4 @@ public interface UserHasSoftSkillService {
 	 List<UserHasSoftSkill> getUserSoftSkillsByUserId(Long userId);
 	 
 }
+*/

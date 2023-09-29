@@ -1,5 +1,5 @@
 package org.perryCode.peringbackend.controller;
-
+/*
 import java.util.List;
 
 import org.perryCode.peringbackend.entity.UserHasSoftSkill;
@@ -56,6 +56,6 @@ public class UserHasSoftSkillController {
 }
 
     
-    
+   */ 
     
 

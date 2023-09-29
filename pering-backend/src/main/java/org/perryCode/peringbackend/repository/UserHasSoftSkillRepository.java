@@ -1,5 +1,5 @@
 package org.perryCode.peringbackend.repository;
-
+/*
 import java.util.List;
 
 import org.perryCode.peringbackend.entity.UserHasSoftSkill;
@@ -15,3 +15,4 @@ public interface UserHasSoftSkillRepository extends CrudRepository<UserHasSoftSk
 	
 	
 }
+*/
