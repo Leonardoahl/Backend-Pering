@@ -39,35 +39,35 @@ public class UserServiceImpl implements UserService{
 	public User updateUser(User user, Long id) {
 		User existingUser = getUserById(id);
 		
-		if(!(user.getFirstname().isEmpty())) {
+		if(!(user.getFirstname() == null)) {
 			existingUser.setFirstname(user.getFirstname());
 		}
 		
-		if(!(user.getLastname().isEmpty())) {
+		if(!(user.getLastname()  == null)) {
 			existingUser.setLastname(user.getFirstname());
 		}
 		
-		if(!(user.getUsername().isEmpty())) {
+		if(!(user.getUsername()  == null)) {
 			existingUser.setUsername(user.getUsername());
 		}
 		
-		if(!(user.getPassword().isEmpty())) {
+		if(!(user.getPassword()  == null)) {
 			existingUser.setPassword(user.getPassword());
 		}
 		
-		if(!(user.getDescription().isEmpty())) {
+		if(!(user.getDescription()  == null)) {
 			existingUser.setDescription(user.getDescription());
 		}
 		
-		if(!(user.getProfilepic().isEmpty())) {
+		if(!(user.getProfilepic()  == null)) {
 			existingUser.setProfilepic(user.getProfilepic());
 		}
 		
-		if(!(user.getSoftSkills().isEmpty())) {
+		if(!(user.getSoftSkills()  == null)) {
 			existingUser.setSoftSkills(user.getSoftSkills());
 		}
 		
-		if(!(user.getTechSkills().isEmpty())) {
+		if(!(user.getTechSkills()  == null)) {
 			existingUser.setTechSkills(user.getTechSkills());
 		}
 			
