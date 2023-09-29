@@ -52,13 +52,14 @@ public class UserController {
 		User tempUser = userService.getUserByUsername(loginUser.getUsername());
 		if(tempUser.getPassword().equals(loginUser.getPassword())) {
 			System.out.println(tempUser.getPassword() + " == " + loginUser.getPassword());
-			if(tempUser.getEmail().equals(loginUser.getEmail())) {
-				System.out.println(tempUser.getEmail() + " == " + loginUser.getEmail());
-				return new ResponseEntity<Boolean>(true, HttpStatus.OK);
-			}
+			return new ResponseEntity<Boolean>(true, HttpStatus.OK);
 		}
 	    return new ResponseEntity<Boolean>(false, HttpStatus.NOT_FOUND);
 	}
+	
+	
+	
+	
 	
 	
 	
