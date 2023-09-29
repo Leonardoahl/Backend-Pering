@@ -48,13 +48,13 @@ public class UserController {
 	
 	@CrossOrigin(origins = "*")
 	@PostMapping("/login")
-	public ResponseEntity<Boolean> loginUser(@RequestBody User loginUser) {
+	public ResponseEntity<User> loginUser(@RequestBody User loginUser) {
 		User tempUser = userService.getUserByUsername(loginUser.getUsername());
 		if(tempUser.getPassword().equals(loginUser.getPassword())) {
 			System.out.println(tempUser.getPassword() + " == " + loginUser.getPassword());
-			return new ResponseEntity<Boolean>(true, HttpStatus.OK);
+			return new ResponseEntity<User>(tempUser, HttpStatus.OK);
 		}
-	    return new ResponseEntity<Boolean>(false, HttpStatus.NOT_FOUND);
+	    return new ResponseEntity<User>(tempUser, HttpStatus.NOT_FOUND);
 	}
 	
 	
