@@ -7,7 +7,6 @@ import org.perryCode.peringbackend.entity.User;
 import org.perryCode.peringbackend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -59,8 +58,9 @@ public class UserController {
 	}
 	
 	@CrossOrigin(origins = "*")
-	@PostMapping("/update")
-	public ResponseEntity<User> updateUser(@RequestBody User user, Long id) {
+	@PostMapping("/update/{id}")
+	public ResponseEntity<User> updateUser(@RequestBody User user, @PathVariable Long id) {
+		System.out.println(user.getUsername());
 		userService.updateUser(user, id);
 		User updatedUser = userService.getUserById(id);
 		return new ResponseEntity<User>(updatedUser, HttpStatus.OK);
