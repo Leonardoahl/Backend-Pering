@@ -1,7 +1,10 @@
 package org.perryCode.peringbackend.service.impl;
 
+import java.util.ArrayList;
 import java.util.List;
 
+import org.perryCode.peringbackend.entity.SoftSkill;
+import org.perryCode.peringbackend.entity.TechSkill;
 import org.perryCode.peringbackend.entity.User;
 import org.perryCode.peringbackend.repository.UserRepository;
 import org.perryCode.peringbackend.service.UserService;
@@ -36,7 +39,7 @@ public class UserServiceImpl implements UserService{
 	}
 
 	@Override
-	public User updateUser(User user, Long id) {
+	public User updateUser(User user, Long id, List<TechSkill> allTechSkills, List<SoftSkill> allSoftSkill) {
 		User existingUser = getUserById(id);
 		
 		if(!(user.getFirstname() == null)) {
@@ -64,11 +67,28 @@ public class UserServiceImpl implements UserService{
 		}
 		
 		if(!(user.getSoftSkills()  == null)) {
-			existingUser.setSoftSkills(user.getSoftSkills());
+			List<SoftSkill> newSofts = new ArrayList<>();
+			for(int i =0; i < user.getSoftSkills().size(); i++) {
+				for(int j = 0; j<allSoftSkill.size(); j++) {
+					if(user.getSoftSkills().get(i).getId() == allSoftSkill.get(j).getId() ){
+						newSofts.add(allSoftSkill.get(j));
+					}
+				}
+			}	
+			existingUser.setSoftSkills(newSofts);
 		}
 		
 		if(!(user.getTechSkills()  == null)) {
-			existingUser.setTechSkills(user.getTechSkills());
+			List<TechSkill> newTechs = new ArrayList<>();
+			for(int i =0; i < user.getTechSkills().size(); i++) {
+				for(int j = 0; j<allTechSkills.size(); j++) {
+					if(user.getTechSkills().get(i).getId() == allTechSkills.get(j).getId() ){
+						newTechs.add(allTechSkills.get(j));
+					}
+				}
+			}	
+			
+			existingUser.setTechSkills(newTechs);
 		}
 			
 		return saveUser(existingUser);
