@@ -54,7 +54,7 @@ public class UserServiceImpl implements UserService{
 			existingUser.setUsername(user.getUsername());
 		}
 		
-		if(!(user.getPassword()  == null)) {
+		if(!(user.getPassword() == null)) {
 			existingUser.setPassword(user.getPassword());
 		}
 		

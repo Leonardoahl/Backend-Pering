@@ -50,6 +50,15 @@ public class UserController {
 		return new ResponseEntity<List<User>>(users, HttpStatus.OK);
 	}
 	
+	
+	@CrossOrigin(origins = "*")
+	@GetMapping("/username/{username}")
+	public ResponseEntity<User> getUserByName(@PathVariable String username){
+		User user = userService.getUserByUsername(username);
+		return new ResponseEntity<User>(user,HttpStatus.OK);
+	}
+	
+	
 	@CrossOrigin(origins = "*")
 	@PostMapping("/register")
 	public ResponseEntity<User> createUser(@RequestBody User user) {
