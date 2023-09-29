@@ -155,43 +155,43 @@ INSERT INTO posts (publication_date, likes, content, fk_users_id, fk_hashtag_id)
 -- -------------------------------------------------------------------------------------
 
 -- Insert Comentarios
-INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_users_id)
+INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_comment_users_id)
 VALUES (1, "Me puedes comentar más información al respecto, por favor.", 1, CURRENT_TIMESTAMP(), 1, 1);
 
 -- Inserción 2
-INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_users_id)
+INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_comment_users_id)
 VALUES (2, "Éxito en tu protecto.", 5, CURRENT_TIMESTAMP(), 1, 2);
 
 -- Inserción 3
-INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_users_id)
+INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_comment_users_id)
 VALUES (3, "Ponte en contacto con Joaquín Z.", 2, CURRENT_TIMESTAMP(), 2, 3);
 
 -- Inserción 4
-INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_users_id)
+INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_comment_users_id)
 VALUES (4, "Parece ser un excelente proyecto", 4, CURRENT_TIMESTAMP(), 2, 4);
 
 -- Inserción 5
-INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_users_id)
+INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_comment_users_id)
 VALUES (5, "Detalles por favor", 3, CURRENT_TIMESTAMP(), 3, 5);
 
 -- Inserción 6
-INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_users_id)
+INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_comment_users_id)
 VALUES (6, "Me fascina la idea", 11, CURRENT_TIMESTAMP(), 3, 4);
 
 -- Inserción 7
-INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_users_id)
+INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_comment_users_id)
 VALUES (7, "Estoy interesado", 1, CURRENT_TIMESTAMP(), 4, 4);
 
 -- Inserción 8
-INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_users_id)
+INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_comment_users_id)
 VALUES (8, "¿Cómo vas con tu proyecto?", 7, CURRENT_TIMESTAMP(), 4, 3);
 
 -- Inserción 9
-INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_users_id)
+INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_comment_users_id)
 VALUES (9, "Parece dicifil :c", 3, CURRENT_TIMESTAMP(), 5, 5);
 
 -- Inserción 10
-INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_users_id)
+INSERT INTO comments (id, content, likes, comment_date, fk_posts_id, fk_comment_users_id)
 VALUES (10, "Juan Z  es muy bueno trabajando Java", 15, CURRENT_TIMESTAMP(), 5, 1);
 
 -- -------------------------------------------------------------------------------------
