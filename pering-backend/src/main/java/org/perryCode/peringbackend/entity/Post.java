@@ -44,12 +44,14 @@ public class Post {
 	@JsonIgnoreProperties("posts")
 	private User user;
 	
+	@OneToMany(mappedBy = "post")
+	@JsonIgnore
+	private List<Comment> comments = new ArrayList<>();
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_hashtag_id", referencedColumnName = "id")
 	private Hashtag hashtag;
 	
-	@OneToMany(mappedBy = "post")
-	@JsonIgnore
-	private List<Comment> comments = new ArrayList<>();
+	
 	
 }
