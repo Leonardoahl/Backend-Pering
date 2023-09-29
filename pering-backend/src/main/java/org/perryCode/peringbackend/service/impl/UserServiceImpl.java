@@ -41,7 +41,8 @@ public class UserServiceImpl implements UserService{
 		existingUser.setDescription(user.getDescription());
 		existingUser.setUsername(user.getUsername());
 		existingUser.setPassword(user.getPassword());
-		existingUser.setDescription(user.getDescription());
+		existingUser.setProfilepic(user.getProfilepic());
+		existingUser.setLastname(user.getLastname());
 		return saveUser(existingUser);
 	}
 

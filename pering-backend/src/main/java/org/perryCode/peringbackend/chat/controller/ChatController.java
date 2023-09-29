@@ -55,6 +55,7 @@ public class ChatController {
 		System.out.println(chatMessage.getReceiver());
 		
 		simpMessagingTemplate.convertAndSendToUser(chatMessage.getReceiver(), "/queue/messages", chatMessage);
+		simpMessagingTemplate.convertAndSendToUser(chatMessage.getSender(),"/queue/messages", chatMessage);
 		
 	}
 	

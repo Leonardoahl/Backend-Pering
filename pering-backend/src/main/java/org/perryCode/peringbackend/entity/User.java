@@ -4,6 +4,7 @@ package org.perryCode.peringbackend.entity;
 
 
 import java.security.Principal;
+import java.sql.Timestamp;
 import java.util.Date;
 
 import jakarta.persistence.Entity;
@@ -33,7 +34,7 @@ public class User{
 	private String password;
 	private String profilepic;
 	private String description;
-	private Date registerDate;
+	private Timestamp registerDate;
 		
 	
 }
