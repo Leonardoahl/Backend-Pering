@@ -38,14 +38,39 @@ public class UserServiceImpl implements UserService{
 	@Override
 	public User updateUser(User user, Long id) {
 		User existingUser = getUserById(id);
-		existingUser.setFirstname(user.getFirstname());
-		existingUser.setDescription(user.getDescription());
-		existingUser.setUsername(user.getUsername());
-		existingUser.setPassword(user.getPassword());
-		existingUser.setProfilepic(user.getProfilepic());
-		existingUser.setLastname(user.getLastname());
-		existingUser.setSoftSkills(user.getSoftSkills());
-		existingUser.setTechSkills(user.getTechSkills());
+		
+		if(!(user.getFirstname().isEmpty())) {
+			existingUser.setFirstname(user.getFirstname());
+		}
+		
+		if(!(user.getLastname().isEmpty())) {
+			existingUser.setLastname(user.getFirstname());
+		}
+		
+		if(!(user.getUsername().isEmpty())) {
+			existingUser.setUsername(user.getUsername());
+		}
+		
+		if(!(user.getPassword().isEmpty())) {
+			existingUser.setPassword(user.getPassword());
+		}
+		
+		if(!(user.getDescription().isEmpty())) {
+			existingUser.setDescription(user.getDescription());
+		}
+		
+		if(!(user.getProfilepic().isEmpty())) {
+			existingUser.setProfilepic(user.getProfilepic());
+		}
+		
+		if(!(user.getSoftSkills().isEmpty())) {
+			existingUser.setSoftSkills(user.getSoftSkills());
+		}
+		
+		if(!(user.getTechSkills().isEmpty())) {
+			existingUser.setTechSkills(user.getTechSkills());
+		}
+			
 		return saveUser(existingUser);
 	}
 
