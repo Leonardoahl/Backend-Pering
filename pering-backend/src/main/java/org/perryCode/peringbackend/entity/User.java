@@ -2,10 +2,8 @@ package org.perryCode.peringbackend.entity;
 
 
 
-
-import java.security.Principal;
+import java.sql.Timestamp;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -38,10 +36,12 @@ public class User{
 	private String password;
 	private String profilepic;
 	private String description;
-	private Date registerDate;
+	private Timestamp registerDate;
+		
+
 	
 	@OneToMany(mappedBy = "user")
 	@JsonIgnoreProperties("user")
 	private List<Post> posts = new ArrayList<>();
-	
+
 }
