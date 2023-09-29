@@ -58,5 +58,12 @@ public class User{
 			)
 	private List<TechSkill> techSkills = new ArrayList<>();
 	
+	
+	@ManyToMany(fetch= FetchType.EAGER, cascade = CascadeType.MERGE)
+	@JoinTable(
+			name = "users_has_soft_skills", joinColumns = @JoinColumn(name = "fk_users_id", referencedColumnName = "id"),
+			inverseJoinColumns = @JoinColumn(name = "fk_soft_skills_id", referencedColumnName = "id")
+			)
+	private List<SoftSkill> softSkills = new ArrayList<>();
 
 }
