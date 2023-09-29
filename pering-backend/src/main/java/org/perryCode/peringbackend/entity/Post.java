@@ -2,6 +2,8 @@ package org.perryCode.peringbackend.entity;
 
 import java.sql.Timestamp;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -31,9 +33,12 @@ public class Post {
 	private String title;
 	private String content;
 	private int likes;
+	
 	@ManyToOne(fetch = FetchType.EAGER) // FetchType.EAGER 
 	@JoinColumn(name = "fk_users_id", referencedColumnName = "id")
+	@JsonIgnoreProperties("posts")
 	private User user;
+	
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "fk_hashtag_id", referencedColumnName = "id")
 	private Hashtag hashtag;
