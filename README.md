@@ -2,7 +2,7 @@
 # [BACKEND] Pering
 
 Este proyecto contiene el desarrollo Backend de la red social "Pering".
-Pering se erige como una plataforma líder en respuesta a la creciente necesidad de unir talento y conocimiento en un mundo tecnológico en constante cambio.Nos enorgullece ofrecer una plataforma que va más allá de la mera interacción en línea. Nos esforzamos por cultivar una comunidad global en la que los profesionales de TI puedan encontrar apoyo, recursos de alta calidad y oportunidades de participación en proyectos de vanguardia.s
+Pering se erige como una plataforma líder en respuesta a la creciente necesidad de unir talento y conocimiento en un mundo tecnológico en constante cambio.Nos enorgullece ofrecer una plataforma que va más allá de la mera interacción en línea. Nos esforzamos por cultivar una comunidad global en la que los profesionales de TI puedan encontrar apoyo, recursos de alta calidad y oportunidades de participación en proyectos de vanguardia.
 
 ## Autores
 
